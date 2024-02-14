@@ -9,6 +9,7 @@ interface IAppContext {
 	books: IBook[];
 	users: IUser[];
 	loginFormData: ILoginFormData;
+	handleLoginFormFieldChange: (fieldIdCode: string, fieldValue: string) => void;
 }
 
 interface IAppProvider {
@@ -38,12 +39,22 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		})();
 	}, []);
 
+	const handleLoginFormFieldChange = (fieldIdCode: string, fieldValue: string) => {
+		switch (fieldIdCode) {
+			case 'login':
+				loginFormData.login = fieldValue;
+				break;
+		}
+		setLoginFormData(structuredClone(loginFormData));
+	}
+
 	return (
 		<AppContext.Provider
 			value={{
 				books,
 				users,
-				loginFormData
+				loginFormData,
+				handleLoginFormFieldChange
 			}}
 		>
 			{children}

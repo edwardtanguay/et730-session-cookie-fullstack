@@ -26,6 +26,6 @@ export interface ILoginFormData {
 }
 
 export const initialLoginformData = {
-	login: '111',
-	password: '222'
+	login: '',
+	password: ''
 }

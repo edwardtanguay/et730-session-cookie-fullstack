@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export const PageLogin = () => {
-	const { loginFormData } = useContext(AppContext);
+	const { loginFormData, handleLoginFormFieldChange } = useContext(AppContext);
 
 	return (
 		<form className="mt-2 flex flex-col gap-3 w-[19rem] bg-slate-300 pt-6 px-4 pb-4 rounded-lg">
@@ -10,7 +10,7 @@ export const PageLogin = () => {
 				<label className="w-[4.5rem]" htmlFor="login">
 					Login:
 				</label>
-				<input value={loginFormData.login} type="text" id="login" />
+				<input value={loginFormData.login} onChange={(e) => handleLoginFormFieldChange('login', e.target.value)} type="text" id="login" />
 			</div>
 			<div className="flex gap-3">
 				<label className="w-[4.5rem]" htmlFor="password">
