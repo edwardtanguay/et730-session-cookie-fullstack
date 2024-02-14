@@ -10,13 +10,13 @@ export const PageLogin = () => {
 				<label className="w-[4.5rem]" htmlFor="login">
 					Login:
 				</label>
-				<input value={loginFormData.login} onChange={(e) => handleLoginFormFieldChange('login', e.target.value)} type="text" id="login" />
+				<input autoFocus value={loginFormData.login} onChange={(e) => handleLoginFormFieldChange('login', e.target.value)} type="text" id="login" />
 			</div>
 			<div className="flex gap-3">
 				<label className="w-[4.5rem]" htmlFor="password">
 					Password:
 				</label>
-				<input value={loginFormData.password} id="password" type="password" />
+				<input value={loginFormData.password} onChange={(e) => handleLoginFormFieldChange('password', e.target.value)} id="password" type="password" />
 			</div>
 			<div className="flex justify-end pr-2">
 				<button className="bg-slate-200 px-2 py-1 rounded">

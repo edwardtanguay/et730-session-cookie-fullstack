@@ -44,6 +44,9 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 			case 'login':
 				loginFormData.login = fieldValue;
 				break;
+			case 'password':
+				loginFormData.password = fieldValue;
+				break;
 		}
 		setLoginFormData(structuredClone(loginFormData));
 	}
