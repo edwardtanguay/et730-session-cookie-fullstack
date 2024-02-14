@@ -41,9 +41,10 @@ POST {{url}}/users
 content-type: application/json
 	
 {
-	"firstName": "James",
-	"lastName": "Morgan",
-	"email": "james.morgan@htl.com",
+	"login": "bb", 
+	"firstName": "Bernd",
+	"lastName": "Buchholz",
+	"email": "bb@htl.com",
 	"address" : {
 		"street": "Holework Street 23",
 		"zipCode": 31239,
