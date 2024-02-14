@@ -120,3 +120,13 @@ export const getCurrentUser = async (req: any, res: express.Response) => {
 		handleError(res, e)
 	}
 }
+
+export const logoutUser = async (req: any, res: express.Response) => {
+	try {
+		req.session.user = null;
+		res.send('user logged out');
+	}
+	catch (e) {
+		handleError(res, e);
+	}
+}
