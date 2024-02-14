@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { handleError } from "../../tools";
 import { User } from "../schemas/userSchema";
 import express from "express";
@@ -87,7 +88,7 @@ export const deleteAllUsers = async (
 };
 
 export const loginUser = async (
-	req: express.Request,
+	req: any,
 	res: express.Response
 ) => {
 	try {
@@ -95,7 +96,7 @@ export const loginUser = async (
 		const user = await User.findOne({ login });
 		if (user !== null) {
 			const seconds = 10;
-      req.session.user = user;
+			req.session.user = user;
 			req.session.cookie.expires = new Date(Date.now() + seconds * 1000);
 			req.session.save();
 			res.json(user);

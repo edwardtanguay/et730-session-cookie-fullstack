@@ -72,3 +72,12 @@ content-type: application/json
 {
 	"mobile": 999
 }
+
+### LOGIN USER
+POST {{url}}/users/login
+Content-Type: application/json
+
+{
+	"login": "cc",
+	"password": ""
+}
