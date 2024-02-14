@@ -15,7 +15,7 @@ app.use(
 	session({
 		resave: true,
 		saveUninitialized: true,
-		secret: "tempsecret"
+		secret: config.sessionSecret()
 	})
 )
 app.use(cookieParser());
