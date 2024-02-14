@@ -1,4 +1,4 @@
-# et729-session-cookie-fullstack
+# et730-session-cookie-fullstack
 
 - this is a full-stack MERN site that demonstrates the user of session/cookies for authorization
 
