@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
-import { IBook, IUser } from "./interfaces";
+import { IBook, ILoginFormData, IUser, initialLoginformData } from "./interfaces";
 import axios from "axios";
 
 const backendUrl = 'http://localhost:4211';
@@ -8,6 +8,7 @@ const backendUrl = 'http://localhost:4211';
 interface IAppContext {
 	books: IBook[];
 	users: IUser[];
+	loginFormData: ILoginFormData;
 }
 
 interface IAppProvider {
@@ -19,6 +20,7 @@ export const AppContext = createContext<IAppContext>({} as IAppContext);
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [books, setBooks] = useState<IBook[]>([]);
 	const [users, setUsers] = useState<IUser[]>([]);
+	const [loginFormData, setLoginFormData] = useState<ILoginFormData>(initialLoginformData)
 
 	useEffect(() => {
 		(async () => {
@@ -40,7 +42,8 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		<AppContext.Provider
 			value={{
 				books,
-				users
+				users,
+				loginFormData
 			}}
 		>
 			{children}
