@@ -8,6 +8,7 @@ import {
 	deleteSingleUser,
 	deleteAllUsers,
 	loginUser,
+	getCurrentUser,
 } from '../controllers/userController.js';
 
 export const userRouter = express.Router();
@@ -18,10 +19,13 @@ userRouter
 	.get(getAllUsers)
 	.delete(deleteAllUsers);
 userRouter
+	.route('/current')
+	.get(getCurrentUser)
+userRouter
 	.route('/:id')
 	.get(getSingleUser)
 	.patch(updateSingleUser)
 	.delete(deleteSingleUser);
 userRouter
 	.route('/login')
-	.post(loginUser)
+	.post(loginUser);

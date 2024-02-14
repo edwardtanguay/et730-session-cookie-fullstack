@@ -78,6 +78,9 @@ POST {{url}}/users/login
 Content-Type: application/json
 
 {
-	"login": "cc",
+	"login": "aa",
 	"password": ""
 }
+
+### CURRENT USER
+GET {{url}}/users/current

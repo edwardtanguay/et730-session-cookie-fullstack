@@ -107,3 +107,16 @@ export const loginUser = async (
 		handleError(res, e);
 	}
 };
+
+export const getCurrentUser = async (req: any, res: express.Response) => {
+	try {
+		if (req.session.user) {
+			res.send(req.session.user);
+		} else {
+			res.status(401).send('no user logged in');
+		}
+	}
+	catch (e) {
+		handleError(res, e)
+	}
+}
