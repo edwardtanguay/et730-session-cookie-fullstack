@@ -15,7 +15,7 @@ create `.env` file with the following entries:
 - random session secret for session cookies
  
 ```
-DB_URL = mongodb://localhost:27017/et730-session-cookie-fullstack
+DB_URL = mongodb://localhost:27017/et431-jwt-fullstack
 SESSION_SECRET = 123456789abcd
 ```	
 
