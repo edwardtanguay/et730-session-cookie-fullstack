@@ -6,6 +6,8 @@
 
 ![grafik](https://github.com/edwardtanguay/830-mongo-book-app/assets/446574/774fc786-e601-4b18-b331-5188f0e8d9d3)
 
+![grafik](https://github.com/edwardtanguay/et730-session-cookie-fullstack/assets/446574/c638e8fe-6ca0-4bc7-a700-c4ca72e458b9)
+
 ## setup
  
 create `.env` file with the following entries:
